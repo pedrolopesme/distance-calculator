@@ -1,6 +1,8 @@
 package distance_calculator
 
-import "math"
+import (
+	"math"
+)
 
 const (
 	// Unit in Meter
@@ -35,10 +37,10 @@ func rad2deg(rad float64) float64 {
 func Calculate(first Coordinate, second Coordinate, unit string) (dist float64) {
 
 	theta := first.Longitude - second.Longitude
-	dist = math.Sin((deg2rad(first.Latitude))*math.Sin(deg2rad(second.Latitude)) + math.Cos(deg2rad(first.Latitude))*math.Cos(deg2rad(second.Latitude))*math.Cos(deg2rad(theta)))
+	dist = math.Sin(deg2rad(first.Latitude)) * math.Sin(deg2rad(second.Latitude)) +  math.Cos(deg2rad(first.Latitude)) * math.Cos(deg2rad(second.Latitude)) * math.Cos(deg2rad(theta))
 	dist = math.Acos(dist)
 	dist = rad2deg(dist)
-	dist = dist * 60
+	dist = dist * 60 * 1.1515
 
 	if unit == UnitMile {
 		dist = dist * 1.1515
