@@ -55,10 +55,10 @@ func Calculate(first Coordinate, second Coordinate, unit string) (dist float64) 
 }
 
 // CalcMeters calculates the distance between two coordinates in Meters
-func CalcMeters(firstLatitude float64, firstLongitude float64, secondLongitude float64, secondLatitude float64) {
+func CalcMeters(firstLatitude float64, firstLongitude float64, secondLongitude float64, secondLatitude float64) (float64) {
 	first := Coordinate{Latitude: firstLatitude, Longitude: firstLongitude}
 	second := Coordinate{Latitude: secondLatitude, Longitude: secondLongitude}
-	Calculate(first, second, UnitMeter)
+	return Calculate(first, second, UnitMeter)
 }
 
 // CalcMiles calculates the distance between two coordinates in Miles
