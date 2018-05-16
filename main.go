@@ -13,7 +13,7 @@ const (
 	UnitKilometer = "KILOMETER"
 
 	// Unit in Nautical
-	UnitNautical = "NAUTICAL"
+	UnitNauticalMile = "NAUTICAL_MILE"
 )
 
 type Coordinate struct {
@@ -46,7 +46,7 @@ func Calculate(first Coordinate, second Coordinate, unit string) (dist float64) 
 		dist = dist * 0.609344
 	} else if unit == UnitKilometer {
 		dist = dist * 1.60934
-	} else if unit == UnitNautical {
+	} else if unit == UnitNauticalMile {
 		dist = dist * 0.8684
 	} else {
 		dist = -1
@@ -75,9 +75,9 @@ func CalcKilometers(firstLatitude float64, firstLongitude float64, secondLongitu
 	Calculate(first, second, UnitKilometer)
 }
 
-// CalcNautical calculates the distance between two coordinates in Nautical
-func CalcNautical(firstLatitude float64, firstLongitude float64, secondLongitude float64, secondLatitude float64) {
+// CalcNautical calculates the distance between two coordinates in Nautical Miles
+func CalcNauticalMiles(firstLatitude float64, firstLongitude float64, secondLongitude float64, secondLatitude float64) {
 	first := Coordinate{Latitude: firstLatitude, Longitude: firstLongitude}
 	second := Coordinate{Latitude: secondLatitude, Longitude: secondLongitude}
-	Calculate(first, second, UnitNautical)
+	Calculate(first, second, UnitNauticalMile)
 }
