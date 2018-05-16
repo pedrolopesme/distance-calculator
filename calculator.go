@@ -43,7 +43,7 @@ func Calculate(first Coordinate, second Coordinate, unit string) (dist float64) 
 	dist = dist * 60 * 1.1515
 
 	if unit == UnitMile {
-		dist = dist * 1.1515
+		// Do nothing
 	} else if unit == UnitMeter {
 		dist = dist * 0.00160934
 	} else if unit == UnitKilometer {
