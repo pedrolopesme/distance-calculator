@@ -55,29 +55,29 @@ func Calculate(first Coordinate, second Coordinate, unit string) (dist float64) 
 }
 
 // CalcMeters calculates the distance between two coordinates in Meters
-func CalcMeters(firstLatitude float64, firstLongitude float64, secondLongitude float64, secondLatitude float64) (float64) {
+func CalcMeters(firstLatitude float64, firstLongitude float64, secondLongitude float64, secondLatitude float64) float64 {
 	first := Coordinate{Latitude: firstLatitude, Longitude: firstLongitude}
 	second := Coordinate{Latitude: secondLatitude, Longitude: secondLongitude}
 	return Calculate(first, second, UnitMeter)
 }
 
 // CalcMiles calculates the distance between two coordinates in Miles
-func CalcMiles(firstLatitude float64, firstLongitude float64, secondLongitude float64, secondLatitude float64) {
+func CalcMiles(firstLatitude float64, firstLongitude float64, secondLongitude float64, secondLatitude float64) float64 {
 	first := Coordinate{Latitude: firstLatitude, Longitude: firstLongitude}
 	second := Coordinate{Latitude: secondLatitude, Longitude: secondLongitude}
-	Calculate(first, second, UnitMile)
+	return Calculate(first, second, UnitMile)
 }
 
 // CalcKilometers calculates the distance between two coordinates in Kilometers
-func CalcKilometers(firstLatitude float64, firstLongitude float64, secondLongitude float64, secondLatitude float64) {
+func CalcKilometers(firstLatitude float64, firstLongitude float64, secondLongitude float64, secondLatitude float64) float64 {
 	first := Coordinate{Latitude: firstLatitude, Longitude: firstLongitude}
 	second := Coordinate{Latitude: secondLatitude, Longitude: secondLongitude}
-	Calculate(first, second, UnitKilometer)
+	return Calculate(first, second, UnitKilometer)
 }
 
 // CalcNautical calculates the distance between two coordinates in Nautical Miles
-func CalcNauticalMiles(firstLatitude float64, firstLongitude float64, secondLongitude float64, secondLatitude float64) {
+func CalcNauticalMiles(firstLatitude float64, firstLongitude float64, secondLongitude float64, secondLatitude float64) float64 {
 	first := Coordinate{Latitude: firstLatitude, Longitude: firstLongitude}
 	second := Coordinate{Latitude: secondLatitude, Longitude: secondLongitude}
-	Calculate(first, second, UnitNauticalMile)
+	return Calculate(first, second, UnitNauticalMile)
 }
