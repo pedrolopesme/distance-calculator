@@ -15,7 +15,12 @@
   <a href="https://godoc.org/github.com/pedrolopesme/distance-calculator"> <img src="https://img.shields.io/badge/Check%20the-GoDocs-1f425f.svg" /></a>
 </p>
 <br>
-  
+
+### Supported Conversion Units
+
+| Meters | Kilometers | Miles | Nautical Miles |
+|---|---|---|---|  
+| CalcMeters() | CalcKilometers() | CalcMiles() | CalcNauticalMiles() |   
  
 ### Makefile
 
